@@ -16,11 +16,15 @@ You'll need:
 
 Create a account in Heroku
 
-### Step 2 - Install Heroku CLI
+### Step 2 - Create a postgresql DB in Heroku
+* Login Heroku
+* Select Data > Postgresql
+
+### Step 3 - Install Heroku CLI
 
 please install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 
-### Step 3 - Create Heroku App using Heroku CLI
+### Step 4 - Create Heroku App using Heroku CLI
 
 ```bash
 # create a Heroku App
@@ -32,18 +36,13 @@ heroku  https://git.heroku.com/$YOUR_API.git (fetch)
 heroku  https://git.heroku.com/$YOUR_API.git (push)
 ```
 
-### Step 4 - Create a postgresql DB in Heroku
-* Login Heroku
-* Select Data
-
-
 ### Step 5 - Add your Environment Variable in Heroku Dashboard
 * Login Heroku
 * Select Dashboard > your API > Setting
 * In Config Vars, Click 'Reveal Config Vars'
 * Add 5 Environment Varaible 
 ```
-  CAPTCHA_KEY = 'Your Captchat secret Key'
+  CAPTCHA_KEY = 'Your Google reCAPTCHA v3 secret Key'
   DATABASE_URL = 'Your DB connection string' (which should be set in step 4)
   NODE_ENV = 'prod'
   TOKEN_EXPIRY_TIME = 'your token time in seconds (you can put 2000 here)'
@@ -52,8 +51,8 @@ heroku  https://git.heroku.com/$YOUR_API.git (push)
 
 ### Step 7 - Commit your changes to your App
 ```bash
-# Go into your mauton clone repository
-$ cd mauton
+# Go into your mauton-api clone repository
+$ cd mauton-api
 $ git add .
 $ git commit -m "heroku setup"
 # push your changes to Heroku
