@@ -75,4 +75,4 @@ $ heroku open
 ```
 
 ## Acknowledgments 🎁
-[Create React App Deployment](https://create-react-app.dev/docs/deployment/)
+[Heroku Nodejs Deployment](https://devcenter.heroku.com/articles/deploying-nodejs)
