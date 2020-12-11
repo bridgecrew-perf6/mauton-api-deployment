@@ -37,13 +37,13 @@ heroku  https://git.heroku.com/$YOUR_API.git (push)
 ### Step 4 - Create a postgresql DB in Heroku
 * Login Heroku
 * Select Data > Select Postgresql > Install Heroku Postgres
-* Choose App to provision to your Heroku API
+* Choose App to provision to your Heroku API (after this, your DB will connect to your API)
 
 ### Step 5 - run script to add Table in your DB
 * Login Heroku
-* Select Data > Check Credentials of Your Heroku Postgresql DB
-* Connect your DB in DBeaver
-* run the [SQL](https://github.com/ikhvjs/mauton-api-deployment/blob/main/mauton-api-sql) in your DB
+* Select Data > get Credentials of Your Heroku Postgresql DB
+* Connect your DB with the Credentials in DBeaver (you can connect your DB via different IDE or client)
+* run the [SQL](https://github.com/ikhvjs/mauton-api-deployment/blob/main/mauton-api-sql.sql) in your DB
 
 ### Step 6 - Add your Environment Variable in Heroku Dashboard
 * Login Heroku
@@ -51,8 +51,8 @@ heroku  https://git.heroku.com/$YOUR_API.git (push)
 * In Config Vars, Click 'Reveal Config Vars'
 * Add 5 Environment Varaible 
 ```
-  CAPTCHA_KEY = 'Your Google reCAPTCHA v3 secret Key'
   DATABASE_URL = 'Your DB connection string' (which should be set in step 4)
+  CAPTCHA_KEY = 'Your Google reCAPTCHA v3 secret Key'
   NODE_ENV = 'prod'
   TOKEN_EXPIRY_TIME = 'your token time in seconds (you can put 2000 here)'
   TOKEN_KEY = 'it is up to you, better with at leaset 40 characters'
