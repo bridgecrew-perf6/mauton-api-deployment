@@ -6,7 +6,7 @@ Describe the procedures of deployment to Heruko for mauton-api.
 ## Prerequisites 📋
 You'll need:
 * [postgresql](https://www.postgresql.org/) 
-* [DBeaver](https://dbeaver.io/download/) (which is DB IDE)
+* [DBeaver](https://dbeaver.io/download/) (which is free and open source universal database tool )
 * [Git](https://git-scm.com) 
 * [NPM](http://npmjs.com)
 * [Google reCAPTCHA v3](https://developers.google.com/recaptcha/docs/v3) (which you need to register for a key)
