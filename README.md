@@ -5,6 +5,8 @@ Describe the procedures of deployment to Heruko for mauton-api.
 
 ## Prerequisites 📋
 You'll need:
+* [postgresql](https://www.postgresql.org/) 
+* [DBeaver](https://dbeaver.io/download/) (which is DB IDE)
 * [Git](https://git-scm.com) 
 * [NPM](http://npmjs.com)
 * [Google reCAPTCHA v3](https://developers.google.com/recaptcha/docs/v3) (which you need to register for a key)
@@ -16,15 +18,11 @@ You'll need:
 
 Create a account in Heroku
 
-### Step 2 - Create a postgresql DB in Heroku
-* Login Heroku
-* Select Data > Postgresql
-
-### Step 3 - Install Heroku CLI
+### Step 2 - Install Heroku CLI
 
 please install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 
-### Step 4 - Create Heroku App using Heroku CLI
+### Step 3 - Create Heroku App using Heroku CLI
 
 ```bash
 # create a Heroku App
@@ -36,7 +34,18 @@ heroku  https://git.heroku.com/$YOUR_API.git (fetch)
 heroku  https://git.heroku.com/$YOUR_API.git (push)
 ```
 
-### Step 5 - Add your Environment Variable in Heroku Dashboard
+### Step 4 - Create a postgresql DB in Heroku
+* Login Heroku
+* Select Data > Select Postgresql > Install Heroku Postgres
+* Choose App to provision to your Heroku API
+
+### Step 5 - run script to add Table in your DB
+* Login Heroku
+* Select Data > Check Credentials of Your Heroku Postgresql DB
+* Connect your DB in DBeaver
+* run the [SQL](https://github.com/ikhvjs/mauton-api-deployment/blob/main/mauton-api-sql) in your DB
+
+### Step 6 - Add your Environment Variable in Heroku Dashboard
 * Login Heroku
 * Select Dashboard > your API > Setting
 * In Config Vars, Click 'Reveal Config Vars'
