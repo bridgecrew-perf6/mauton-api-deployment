@@ -1,7 +1,7 @@
 # mauton-api-deployment :tiger:
 
 ## Purpose
-Describe the procedures of deployment to Heruko for mauton-api.
+Describe the procedures of deployment to Heruko for [mauton-api](https://github.com/ikhvjs/mauton-api).
 
 ## Prerequisites 📋
 You'll need:
