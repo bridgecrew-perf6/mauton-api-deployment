@@ -1,10 +1,4 @@
 
--- public.tb_user definition
-
--- Drop table
-
--- DROP TABLE public.tb_user;
-
 CREATE TABLE public.tb_user (
 	user_id serial NOT NULL,
 	email text NOT NULL,
@@ -22,11 +16,6 @@ CREATE TABLE public.tb_user (
 	CONSTRAINT tb_user_user_path_key UNIQUE (user_path)
 );
 
--- public.tb_tag definition
-
--- Drop table
-
--- DROP TABLE public.tb_tag;
 
 CREATE TABLE public.tb_tag (
 	tag_id serial NOT NULL,
@@ -42,15 +31,10 @@ CREATE TABLE public.tb_tag (
 );
 
 
--- public.tb_tag foreign keys
 
 ALTER TABLE public.tb_tag ADD CONSTRAINT fk_tag_user_id FOREIGN KEY (user_id) REFERENCES tb_user(user_id);
 
--- public.tb_menu definition
 
--- Drop table
-
--- DROP TABLE public.tb_menu;
 
 CREATE TABLE public.tb_menu (
 	menu_id serial NOT NULL,
@@ -69,16 +53,11 @@ CREATE TABLE public.tb_menu (
 );
 
 
--- public.tb_menu foreign keys
+
 
 ALTER TABLE public.tb_menu ADD CONSTRAINT fk_menu_id FOREIGN KEY (parent_menu_id) REFERENCES tb_menu(menu_id);
 ALTER TABLE public.tb_menu ADD CONSTRAINT fk_menu_user_id FOREIGN KEY (user_id) REFERENCES tb_user(user_id);
 
--- public.tb_blog_category definition
-
--- Drop table
-
--- DROP TABLE public.tb_blog_category;
 
 CREATE TABLE public.tb_blog_category (
 	blog_category_id serial NOT NULL,
@@ -95,15 +74,10 @@ CREATE TABLE public.tb_blog_category (
 );
 
 
--- public.tb_blog_category foreign keys
 
 ALTER TABLE public.tb_blog_category ADD CONSTRAINT fk_category_user_id FOREIGN KEY (user_id) REFERENCES tb_user(user_id);
 
--- public.tb_blog definition
 
--- Drop table
-
--- DROP TABLE public.tb_blog;
 
 CREATE TABLE public.tb_blog (
 	blog_id serial NOT NULL,
@@ -121,17 +95,13 @@ CREATE TABLE public.tb_blog (
 );
 
 
--- public.tb_blog foreign keys
+
 
 ALTER TABLE public.tb_blog ADD CONSTRAINT fk_blog_category FOREIGN KEY (blog_category_id) REFERENCES tb_blog_category(blog_category_id);
 ALTER TABLE public.tb_blog ADD CONSTRAINT fk_blog_user_id FOREIGN KEY (user_id) REFERENCES tb_user(user_id);
 ALTER TABLE public.tb_blog ADD CONSTRAINT fk_menu FOREIGN KEY (menu_id) REFERENCES tb_menu(menu_id);
 
--- public.tb_blog_tag_link definition
 
--- Drop table
-
--- DROP TABLE public.tb_blog_tag_link;
 
 CREATE TABLE public.tb_blog_tag_link (
 	blog_tag_link_id serial NOT NULL,
@@ -145,7 +115,7 @@ CREATE TABLE public.tb_blog_tag_link (
 );
 
 
--- public.tb_blog_tag_link foreign keys
+
 
 ALTER TABLE public.tb_blog_tag_link ADD CONSTRAINT fk_blog FOREIGN KEY (blog_id) REFERENCES tb_blog(blog_id);
 ALTER TABLE public.tb_blog_tag_link ADD CONSTRAINT fk_tag FOREIGN KEY (tag_id) REFERENCES tb_tag(tag_id);
