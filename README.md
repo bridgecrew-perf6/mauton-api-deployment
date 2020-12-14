@@ -25,6 +25,8 @@ please install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 ### Step 3 - Create Heroku App using Heroku CLI
 
 ```bash
+#Login Heroku
+$ heroku login
 # create a Heroku App
 $ heroku create $YOUR_API
 # check git remote 
